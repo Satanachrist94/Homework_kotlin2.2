@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MainKtTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-04-28T16:21:10" hostname="DESKTOP-C87IGSG" time="0.01">
+  <properties/>
+  <testcase name="getMin_comission_mir" classname="MainKtTest" time="0.009"/>
+  <testcase name="comission_calculation_for_visa" classname="MainKtTest" time="0.0"/>
+  <testcase name="comission_calculation_for_vkpay" classname="MainKtTest" time="0.0"/>
+  <testcase name="comission_calculation_for_maestro" classname="MainKtTest" time="0.0"/>
+  <testcase name="comission_calculation_for_mastercard" classname="MainKtTest" time="0.0"/>
+  <testcase name="comission_calculation_for_mir" classname="MainKtTest" time="0.0"/>
+  <testcase name="getMin_comission_visa" classname="MainKtTest" time="0.0"/>
+  <system-out><![CDATA[Минимальная комиссия 35 рублей
+Минимальная комиссия 35 рублей
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

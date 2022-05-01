@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Homework2.2</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Main.kt</span></div><h1>Main.kt</h1><pre class="source lang-java linenums">import java.time.temporal.TemporalAmount
+
+const val TYPE_CARD_MASTERCARD = &quot;Mastercard&quot;
+const val TYPE_CARD_MAESTRO = &quot;Maestro&quot;
+<span class="pc" id="L5">var TYPE_CARD_VKPAY = &quot;VKPay&quot;</span>
+<span class="pc" id="L6">var TYPE_CARD_VISA = &quot;Visa_mir&quot;</span>
+<span class="pc" id="L7">var TYPE_CARD_MIR = &quot;Mir&quot;</span>
+<span class="pc" id="L8">val min_comission = 3500</span>
+
+
+fun main() {
+<span class="nc" id="L12">    var amount = 460_000</span>
+
+<span class="nc" id="L14">    var comission = comission_calculation( amount = amount) / 100</span>
+<span class="nc" id="L15">    var transfer = (amount / 100 - comission)</span>
+
+<span class="nc" id="L17">    println(&quot;РљРѕРјРёСЃСЃРёСЏ ${comission} СЂСѓР±Р»РµР№&quot;)</span>
+<span class="nc" id="L18">    println(&quot;РЎСѓРјРјР° РїРµСЂРµРІРѕРґР° ${transfer} СЂСѓР±Р»РµР№ &quot;)</span>
+
+<span class="nc" id="L20">}</span>
+
+<span class="pc" id="L22">fun comission_calculation(type: String = TYPE_CARD_VKPAY, last_amount: Int = 0, amount: Int): Double {</span>
+<span class="fc" id="L23">    return when (type) {</span>
+<span class="fc bfc" id="L24" title="All 4 branches covered.">        TYPE_CARD_MAESTRO, TYPE_CARD_MASTERCARD -&gt; amount * 0.06 + 2000</span>
+
+<span class="fc bfc" id="L26" title="All 4 branches covered.">        TYPE_CARD_MIR, TYPE_CARD_VISA -&gt;</span>
+<span class="fc" id="L27">            when {</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">                amount * 0.075 &lt; min_comission -&gt; {</span>
+<span class="fc" id="L29">                    println(&quot;РњРёРЅРёРјР°Р»СЊРЅР°СЏ РєРѕРјРёСЃСЃРёСЏ 35 СЂСѓР±Р»РµР№&quot;)</span>
+<span class="fc" id="L30">                    0.0</span>
+                }
+<span class="fc" id="L32">                else -&gt; amount * 0.075</span>
+            }
+<span class="fc" id="L34">        else -&gt; 0.0</span>
+    }
+
+}
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
