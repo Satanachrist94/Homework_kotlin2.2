@@ -40,7 +40,7 @@ internal class MainKtTest {
     @Test
     fun comission_calculation_for_visa() {
         var amount = 460000
-        val expected_comission :Double =34500.0
+        val expected_comission :Double =40500.0
         var TYPE_CARD = TYPE_CARD_VISA
         var actual_comission = comission_calculation(TYPE_CARD, amount=amount)
         assertEquals(expected_comission, actual_comission)
